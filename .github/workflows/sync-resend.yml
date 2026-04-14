@@ -1,0 +1,35 @@
+name: Sync email templates to Resend
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "emails/**"
+      - "scripts/sync-resend.ts"
+
+  # También permite correrlo manualmente desde GitHub
+  workflow_dispatch:
+
+jobs:
+  sync:
+    name: Compile & sync templates
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Sync templates to Resend
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+        run: npm run sync
