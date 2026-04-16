@@ -16,7 +16,7 @@ import * as React from "react";
 
 // ─── Logo wordmark URL pública ────────────────────────────────────────────────
 const LOGO_URL =
-  "https://raw.githubusercontent.com/conectamos-mx/conectamos-emails/main/public/logo.svg";
+  "https://atqmtsmjpjtrqooibubm.supabase.co/storage/v1/object/public/wa-media/assets/logo.svg";
 
 // ─── Tipos ───────────────────────────────────────────────────────────────────
 export interface LayoutProps {
