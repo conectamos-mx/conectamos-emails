@@ -7,25 +7,27 @@ import {
   EmailTitle,
   EmailText,
   PrimaryButton,
+  EmailDivider,
+  LinkFallback,
 } from "../_shared/components";
 
 // ─── Props ────────────────────────────────────────────────────────────────────
 export interface BienvenidaProps {
   nombre: string;
   empresa: string;
-  urlPlataforma: string;
+  urlActivacion: string;
 }
 
 // ─── Valores por defecto (para preview en React Email) ───────────────────────
 export const defaults: BienvenidaProps = {
   nombre: "{{nombre}}",
   empresa: "{{empresa}}",
-  urlPlataforma: "{{urlPlataforma}}",
+  urlActivacion: "{{urlActivacion}}",
 };
 
 // ─── Template ─────────────────────────────────────────────────────────────────
 export default function Bienvenida(props: BienvenidaProps = defaults) {
-  const { nombre, empresa, urlPlataforma } = props;
+  const { nombre, empresa, urlActivacion } = props;
 
   return (
     <Layout preview={`Bienvenido a ConectamOS, ${empresa}. Tu cuenta está lista.`} badge="plataforma">
@@ -38,7 +40,7 @@ export default function Bienvenida(props: BienvenidaProps = defaults) {
       </EmailText>
 
       <Section style={{ margin: "22px 0" }}>
-        <PrimaryButton href={urlPlataforma}>Entrar a la plataforma</PrimaryButton>
+        <PrimaryButton href={urlActivacion}>Activar mi cuenta</PrimaryButton>
       </Section>
 
       <EmailText muted>
@@ -47,6 +49,10 @@ export default function Bienvenida(props: BienvenidaProps = defaults) {
           hola@conectamos.ai
         </a>
       </EmailText>
+
+      <EmailDivider />
+
+      <LinkFallback href={urlActivacion} label={urlActivacion} />
     </Layout>
   );
 }
