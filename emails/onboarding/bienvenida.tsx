@@ -6,38 +6,26 @@ import {
   EmailLabel,
   EmailTitle,
   EmailText,
-  InfoBox,
-  MetaRow,
   PrimaryButton,
-  GhostButton,
-  EmailDivider,
 } from "../_shared/components";
 
 // ─── Props ────────────────────────────────────────────────────────────────────
 export interface BienvenidaProps {
   nombre: string;
   empresa: string;
-  plan: string;
-  usuariosIncluidos: string;
-  fechaPrueba: string;
   urlPlataforma: string;
-  urlGuia: string;
 }
 
 // ─── Valores por defecto (para preview en React Email) ───────────────────────
 const defaults: BienvenidaProps = {
   nombre: "{{nombre}}",
   empresa: "{{empresa}}",
-  plan: "{{plan}}",
-  usuariosIncluidos: "{{usuariosIncluidos}}",
-  fechaPrueba: "{{fechaPrueba}}",
   urlPlataforma: "{{urlPlataforma}}",
-  urlGuia: "{{urlGuia}}",
 };
 
 // ─── Template ─────────────────────────────────────────────────────────────────
 export default function Bienvenida(props: BienvenidaProps = defaults) {
-  const { nombre, empresa, plan, usuariosIncluidos, fechaPrueba, urlPlataforma, urlGuia } = props;
+  const { nombre, empresa, urlPlataforma } = props;
 
   return (
     <Layout preview={`Bienvenido a ConectamOS, ${empresa}. Tu cuenta está lista.`} badge="plataforma">
@@ -49,27 +37,9 @@ export default function Bienvenida(props: BienvenidaProps = defaults) {
         desde un solo lugar.
       </EmailText>
 
-      <InfoBox>
-        <strong style={{ color: "#0F2937", fontWeight: 500 }}>
-          Estás en el plan {plan}.
-        </strong>{" "}
-        Tienes 30 días de prueba incluidos, sin necesidad de tarjeta de crédito.
-      </InfoBox>
-
       <Section style={{ margin: "22px 0" }}>
         <PrimaryButton href={urlPlataforma}>Entrar a la plataforma</PrimaryButton>
-        <GhostButton href={urlGuia}>Ver guía de inicio</GhostButton>
       </Section>
-
-      <EmailDivider />
-
-      <MetaRow
-        items={[
-          { label: "Plan", value: plan },
-          { label: "Usuarios", value: usuariosIncluidos },
-          { label: "Prueba hasta", value: fechaPrueba },
-        ]}
-      />
 
       <EmailText muted>
         ¿Dudas? Escríbenos a{" "}
