@@ -1,3 +1,4 @@
+// templates v1
 import { Section } from "@react-email/components";
 import * as React from "react";
 import { Layout } from "../_shared/layout";
@@ -25,13 +26,13 @@ export interface BienvenidaProps {
 
 // ─── Valores por defecto (para preview en React Email) ───────────────────────
 const defaults: BienvenidaProps = {
-  nombre: "Carlos",
-  empresa: "Empresa XYZ",
-  plan: "Starter",
-  usuariosIncluidos: "5",
-  fechaPrueba: "14 may 2025",
-  urlPlataforma: "https://app.conectamos.ai",
-  urlGuia: "https://docs.conectamos.ai/inicio",
+  nombre: "{{nombre}}",
+  empresa: "{{empresa}}",
+  plan: "{{plan}}",
+  usuariosIncluidos: "{{usuariosIncluidos}}",
+  fechaPrueba: "{{fechaPrueba}}",
+  urlPlataforma: "{{urlPlataforma}}",
+  urlGuia: "{{urlGuia}}",
 };
 
 // ─── Template ─────────────────────────────────────────────────────────────────
