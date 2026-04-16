@@ -21,12 +21,12 @@ export interface InvitarUsuarioProps {
 }
 
 const defaults: InvitarUsuarioProps = {
-  nombreInvitado: "Ana García",
-  nombreInvitador: "Carlos Ramírez",
-  empresa: "Empresa XYZ",
-  rol: "Agente",
-  horasExpiracion: 72,
-  urlInvitacion: "https://app.conectamos.ai/invite?token=xxxxxxxxxxx",
+  nombreInvitado: "{{nombreInvitado}}",
+  nombreInvitador: "{{nombreInvitador}}",
+  empresa: "{{empresa}}",
+  rol: "{{rol}}",
+  horasExpiracion: "{{horasExpiracion}}" as any,
+  urlInvitacion: "{{urlInvitacion}}",
 };
 
 export default function InvitarUsuario(props: InvitarUsuarioProps = defaults) {

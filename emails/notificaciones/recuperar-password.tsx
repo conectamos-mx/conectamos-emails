@@ -18,9 +18,9 @@ export interface RecuperarPasswordProps {
 }
 
 const defaults: RecuperarPasswordProps = {
-  nombre: "Carlos",
-  urlReset: "https://app.conectamos.ai/auth/reset?token=xxxxxxxxxxx",
-  minutosExpiracion: 30,
+  nombre: "{{nombre}}",
+  urlReset: "{{urlReset}}",
+  minutosExpiracion: "{{minutosExpiracion}}" as any,
 };
 
 export default function RecuperarPassword(props: RecuperarPasswordProps = defaults) {

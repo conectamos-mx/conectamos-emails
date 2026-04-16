@@ -18,9 +18,9 @@ export interface VerificarEmailProps {
 }
 
 const defaults: VerificarEmailProps = {
-  nombre: "Carlos",
-  urlVerificacion: "https://app.conectamos.ai/auth/verify?token=xxxxxxxxxxx",
-  minutosExpiracion: 60,
+  nombre: "{{nombre}}",
+  urlVerificacion: "{{urlVerificacion}}",
+  minutosExpiracion: "{{minutosExpiracion}}" as any,
 };
 
 export default function VerificarEmail(props: VerificarEmailProps = defaults) {

@@ -22,12 +22,12 @@ export interface AlertaSaldoProps {
 }
 
 const defaults: AlertaSaldoProps = {
-  nombre: "Carlos",
-  saldoActual: 87,
-  promedioDiario: 340,
-  estimadoHoras: 6,
-  urlRecargar: "https://app.conectamos.ai/billing/recharge",
-  urlConsumo: "https://app.conectamos.ai/usage",
+  nombre: "{{nombre}}",
+  saldoActual: "{{saldoActual}}" as any,
+  promedioDiario: "{{promedioDiario}}" as any,
+  estimadoHoras: "{{estimadoHoras}}" as any,
+  urlRecargar: "{{urlRecargar}}",
+  urlConsumo: "{{urlConsumo}}",
 };
 
 export default function AlertaSaldo(props: AlertaSaldoProps = defaults) {

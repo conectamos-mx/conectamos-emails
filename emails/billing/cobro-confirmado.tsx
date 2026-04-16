@@ -25,15 +25,15 @@ export interface CobroConfirmadoProps {
 }
 
 const defaults: CobroConfirmadoProps = {
-  nombre: "Carlos",
-  monto: "2,490",
-  moneda: "MXN",
-  plan: "Business",
-  periodo: "Abr 2025",
-  folio: "CNT-2025-0412",
-  proximoCobro: "1 de mayo de 2025",
-  urlFactura: "https://app.conectamos.ai/billing/invoices",
-  urlHistorial: "https://app.conectamos.ai/billing",
+  nombre: "{{nombre}}",
+  monto: "{{monto}}",
+  moneda: "{{moneda}}",
+  plan: "{{plan}}",
+  periodo: "{{periodo}}",
+  folio: "{{folio}}",
+  proximoCobro: "{{proximoCobro}}",
+  urlFactura: "{{urlFactura}}",
+  urlHistorial: "{{urlHistorial}}",
 };
 
 export default function CobroConfirmado(props: CobroConfirmadoProps = defaults) {
