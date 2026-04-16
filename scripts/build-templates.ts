@@ -15,25 +15,26 @@ import { join } from "path";
 
 // ─── Templates ────────────────────────────────────────────────────────────────
 // Convención de IDs: {categoría}_{nombre}
-import Bienvenida from "../emails/onboarding/bienvenida";
-import VerificarEmail from "../emails/onboarding/verificar-email";
-import InvitarUsuario from "../emails/onboarding/invitar-usuario";
-import CobroConfirmado from "../emails/billing/cobro-confirmado";
-import AlertaSaldo from "../emails/billing/alerta-saldo";
-import RecuperarPassword from "../emails/notificaciones/recuperar-password";
+import Bienvenida, { defaults as defaultsBienvenida } from "../emails/onboarding/bienvenida";
+import VerificarEmail, { defaults as defaultsVerificarEmail } from "../emails/onboarding/verificar-email";
+import InvitarUsuario, { defaults as defaultsInvitarUsuario } from "../emails/onboarding/invitar-usuario";
+import CobroConfirmado, { defaults as defaultsCobroConfirmado } from "../emails/billing/cobro-confirmado";
+import AlertaSaldo, { defaults as defaultsAlertaSaldo } from "../emails/billing/alerta-saldo";
+import RecuperarPassword, { defaults as defaultsRecuperarPassword } from "../emails/notificaciones/recuperar-password";
 
 interface TemplateEntry {
   id: string;
   component: React.FC<any>;
+  defaults: Record<string, any>;
 }
 
 const TEMPLATES: TemplateEntry[] = [
-  { id: "onb_bienvenida",        component: Bienvenida },
-  { id: "onb_verificar_email",   component: VerificarEmail },
-  { id: "onb_invitar_usuario",   component: InvitarUsuario },
-  { id: "bil_cobro_confirmado",  component: CobroConfirmado },
-  { id: "bil_alerta_saldo",      component: AlertaSaldo },
-  { id: "not_recuperar_password", component: RecuperarPassword },
+  { id: "onb_bienvenida",         component: Bienvenida,        defaults: defaultsBienvenida },
+  { id: "onb_verificar_email",    component: VerificarEmail,    defaults: defaultsVerificarEmail },
+  { id: "onb_invitar_usuario",    component: InvitarUsuario,    defaults: defaultsInvitarUsuario },
+  { id: "bil_cobro_confirmado",   component: CobroConfirmado,   defaults: defaultsCobroConfirmado },
+  { id: "bil_alerta_saldo",       component: AlertaSaldo,       defaults: defaultsAlertaSaldo },
+  { id: "not_recuperar_password", component: RecuperarPassword, defaults: defaultsRecuperarPassword },
 ];
 
 // ─── Main ─────────────────────────────────────────────────────────────────────
@@ -51,7 +52,7 @@ async function main() {
 
   for (const tpl of TEMPLATES) {
     try {
-      const html = await render(React.createElement(tpl.component));
+      const html = await render(React.createElement(tpl.component, tpl.defaults));
       const outPath = `dist/${tpl.id}.html`;
 
       if (isDryRun) {

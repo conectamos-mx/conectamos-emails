@@ -17,7 +17,7 @@ export interface VerificarEmailProps {
   minutosExpiracion: number;
 }
 
-const defaults: VerificarEmailProps = {
+export const defaults: VerificarEmailProps = {
   nombre: "{{nombre}}",
   urlVerificacion: "{{urlVerificacion}}",
   minutosExpiracion: "{{minutosExpiracion}}" as any,

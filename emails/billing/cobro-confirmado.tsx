@@ -24,7 +24,7 @@ export interface CobroConfirmadoProps {
   urlHistorial: string;
 }
 
-const defaults: CobroConfirmadoProps = {
+export const defaults: CobroConfirmadoProps = {
   nombre: "{{nombre}}",
   monto: "{{monto}}",
   moneda: "{{moneda}}",

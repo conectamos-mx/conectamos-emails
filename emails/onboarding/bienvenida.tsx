@@ -17,7 +17,7 @@ export interface BienvenidaProps {
 }
 
 // ─── Valores por defecto (para preview en React Email) ───────────────────────
-const defaults: BienvenidaProps = {
+export const defaults: BienvenidaProps = {
   nombre: "{{nombre}}",
   empresa: "{{empresa}}",
   urlPlataforma: "{{urlPlataforma}}",

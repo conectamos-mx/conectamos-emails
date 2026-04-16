@@ -20,7 +20,7 @@ export interface InvitarUsuarioProps {
   urlInvitacion: string;
 }
 
-const defaults: InvitarUsuarioProps = {
+export const defaults: InvitarUsuarioProps = {
   nombreInvitado: "{{nombreInvitado}}",
   nombreInvitador: "{{nombreInvitador}}",
   empresa: "{{empresa}}",

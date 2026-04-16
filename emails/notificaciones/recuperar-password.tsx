@@ -17,7 +17,7 @@ export interface RecuperarPasswordProps {
   minutosExpiracion: number;
 }
 
-const defaults: RecuperarPasswordProps = {
+export const defaults: RecuperarPasswordProps = {
   nombre: "{{nombre}}",
   urlReset: "{{urlReset}}",
   minutosExpiracion: "{{minutosExpiracion}}" as any,

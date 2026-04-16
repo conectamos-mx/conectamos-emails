@@ -21,7 +21,7 @@ export interface AlertaSaldoProps {
   urlConsumo: string;
 }
 
-const defaults: AlertaSaldoProps = {
+export const defaults: AlertaSaldoProps = {
   nombre: "{{nombre}}",
   saldoActual: "{{saldoActual}}" as any,
   promedioDiario: "{{promedioDiario}}" as any,
