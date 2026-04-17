@@ -73,7 +73,7 @@ export function Layout({ preview, badge = "plataforma", children }: LayoutProps)
                 <Img
                   src={LOGO_URL}
                   width="126"
-                  height="20"
+                  height="71"
                   alt="ConectamOS"
                 />
               </Column>
@@ -98,7 +98,7 @@ export function Layout({ preview, badge = "plataforma", children }: LayoutProps)
                 <Img
                   src={LOGO_URL}
                   width="90"
-                  height="14"
+                  height="51"
                   alt="ConectamOS"
                   style={{ opacity: 0.4 }}
                 />
